@@ -1,0 +1,39 @@
+{
+  "name": "dotman",
+  "version": "1.0.0",
+  "description": "Node-based manager for home-folder dot files ",
+  "main": "bin/index.js",
+  "bin": {
+    "dotman": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "prebuild": "tsc --noEmit",
+    "build": "NODE_ENV=production npm run build:ts",
+    "build:dev": "NODE_ENV=development npm run build:ts",
+    "build:ts": "babel src -d bin -x \".ts\"",
+    "dev": "chokidar \"./src/**/*.ts\" -c \"npm run build:dev\" --initial",
+    "run": "node ./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JTessmer/dotman.git"
+  },
+  "author": "Jesse Tessmer",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/JTessmer/dotman/issues"
+  },
+  "homepage": "https://github.com/JTessmer/dotman#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.2",
+    "chokidar-cli": "^2.1.0",
+    "jest": "^25.4.0",
+    "typescript": "^3.8.3"
+  }
+}

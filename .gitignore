@@ -3,8 +3,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# nyc test coverage
-.nyc_output
+# Test coverage
+coverage
 
 # Built files
 bin
